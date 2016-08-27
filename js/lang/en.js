@@ -2,7 +2,7 @@ export const EN = {
   scenes: {
     office: {
       intro: {
-        title: "My Office",
+        title: "Office",
         text: [
           'This is my office. I am a so called "couch doctor". Its not much but I make my living out of it.',
           'The office is placed in my house that I inherited from my parents. I live here with my wife and my stepdaughter.',
@@ -18,11 +18,29 @@ export const EN = {
         }
       },
       intro2: {
-        title: "My Office",
+        title: "Office",
         text: [
           'Yeah!'
         ]
       }
+    },
+    rooms: {
+      corridor: {
+        title: "Corridor",
+        text: ["In the corridor is a big mirror next to the wardrobe. There is also a big shoe cabinet with a lot of shoes in front of it."],
+        actions: {
+          choice1: 'Look in the mirror',
+          choice2: 'Check the wardrobe'
+        }
+      }
+    }
+  },
+  places: {
+    office: {
+      title: "Office"
+    },
+    kitchen: {
+      title: "Kitchen"
     }
   }
 };

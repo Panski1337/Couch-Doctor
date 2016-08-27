@@ -8,9 +8,9 @@ export default class SceneTitle extends Component {
 
   render() {
     return (
-      <div className="full-width screen-title-wrapper">
+      <span className="screen-title-wrapper">
         <h1 className="screen-title">{this.props.title}</h1>
-      </div>
+      </span>
     )
   }
 }

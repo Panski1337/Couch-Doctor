@@ -13,7 +13,7 @@ setLanguage('en');
 export default React.createClass({
   render() {
     return (
-      <div className="container" style={{backgroundImage: 'url(' + backgroundImage + ')'}}>
+      <div className="container">
         <link href="https://fonts.googleapis.com/css?family=Lobster|Open+Sans" rel="stylesheet" />
         <Provider store={store}>
           <GameContainer />

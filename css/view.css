@@ -1,22 +1,68 @@
 .view-wrapper {
     position: fixed;
-    top: 100px;
-    bottom: 150px;
-    margin: 0 auto;
+    top: 15%;
+    left: 0;
+    height: 50%;
+    margin: 0;
+    z-index: 1;
     width: 100%;
 }
 
 .view {
-    margin: 0 auto;
-    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    background: no-repeat center top;
-    background-size: auto 100%;
+    height: 100%;
+    overflow: hidden;
+    border-top: solid 1px #fff;
+    border-bottom: solid 1px #fff;
 }
 
-@media screen and (max-device-width: 768px) and (min-device-height: 500px) {
-    .view-wrapper {
-        top: 150px;
-        bottom: 250px;
-    }
+.view-image {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    max-height: 10000px;
+    display: block;
+    margin: auto auto;
+}
+
+.screen-title-wrapper {
+    text-align: left;
+    font-family: 'Lobster', cursive;
+    color: #fbeed5;
+    position: absolute;
+    top: -65px;
+    left: 0;
+    z-index: 1;
+    padding-left: 10px;
+}
+
+
+.places {
+    position: fixed;
+    bottom: 35%;
+    left: 0;
+    z-index: 2;
+}
+
+.places .place {
+    min-width: 150px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.places .place p {
+    background-color: black;
+    color: #fbeed5;
+    padding: 3px
+}
+
+.places .place p:hover {
+    background-color: #fbeed5;
+    color: black;
+    cursor: pointer;
 }

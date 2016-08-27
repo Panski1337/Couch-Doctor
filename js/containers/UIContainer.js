@@ -27,25 +27,29 @@ export class UIContainer extends Component {
 
   updateTextCounter() {
     let textCounter = this.props.textCounter;
-    if (textCounter + 1 < this.props.text.length)  this.update({textCounter: textCounter + 1})
+    if (this.hasFollowUpText())  this.update({textCounter: textCounter + 1})
+  }
+
+  hasFollowUpText() {
+    return this.props.textCounter + 1 < this.props.text.length
   }
 
   render() {
     const {text, actions, textCounter} = this.props;
     return (
       <div className="full-width ui">
-        <div className="text">
+        <div className={["text", this.hasFollowUpText() ? 'has-next' : ''].join(' ')}>
           <span onClick={this.updateTextCounter.bind(this)}>{text[textCounter]}</span>
         </div>
-        <div className="actions">
-          {actions && text.length === textCounter + 1 && actions.map(this.renderAction.bind(this))}
-        </div>
+        {actions && actions.length > 0 && !this.hasFollowUpText() && <div className="actions">
+          {actions.map(this.renderAction.bind(this))}
+        </div>}
       </div>
     )
   }
 }
 
-export default connect(state => state.screen.ui, {
+export default connect(state => state.scene.ui, {
   updateUI: UIActions.updateUI,
   performAction: UIActions.performAction
 })(UIContainer)

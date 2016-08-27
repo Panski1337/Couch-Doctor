@@ -1,10 +1,15 @@
-import {officeScene} from './office/intro/OfficeIntroScene';
-import {officeScene2} from './office/intro2/OfficeIntro2Scene';
+import {officeIntro1} from './office/intro/OfficeIntro1Scene';
+import {officeIntro2} from './office/intro/OfficeIntro2Scene';
+import {corridor} from "./rooms/Corridor";
+
 
 const sceneIndex = {
   office: {
-    intro: officeScene,
-    intro2: officeScene2
+    officeIntro1,
+    officeIntro2
+  },
+  rooms: {
+    corridor
   }
 };
 
