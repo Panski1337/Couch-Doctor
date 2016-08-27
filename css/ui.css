@@ -8,6 +8,11 @@
     color: #fbeed5;
 }
 
+.ui .actions .action:hover {
+    background-color: #fbeed5;
+    color: #333333;
+}
+
 .ui .text,
 .ui .actions {
     width: 100%;
