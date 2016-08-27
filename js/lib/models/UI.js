@@ -12,7 +12,7 @@ export default class UI {
   asPlainObject() {
     return {
       text: this.text,
-      actions: this.actions,
+      actions: this.actions.map(action => action.asPlainObject()),
       textCounter: this.textCounter
     }
   }

@@ -1,20 +1,20 @@
-import Screen from './Screen'
+import Screen from './Scene'
 
 export default class Action {
   text = '';
-  screen = new Screen();
+  scene = new Screen();
   dispatches = [];
 
   constructor(options = {}) {
     this.text = options.text || this.text;
-    this.screen = options.screen || this.screen;
+    this.scene = options.scene || this.scene;
     this.dispatches = options.dispatches || this.dispatches;
   }
 
   asPlainObject() {
     return {
       text: this.text,
-      screen: this.screen,
+      scene: this.scene,
       dispatches: this.dispatches
     }
   }

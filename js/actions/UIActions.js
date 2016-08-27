@@ -1,15 +1,11 @@
 import * as ActionTypes from '../constants/ActionTypes';
-import {sceneIndex} from '../lib/scenes/sceneIndex'
+import getScene from '../lib/scenes/sceneIndex'
 
 export function updateUI(ui) {
   return {type: ActionTypes.UI_TEXT_COUNT_UP, ui}
 }
 
 export function performAction(action) {  
-  return {type: ActionTypes.UI_PERFOM_ACTION, scene: getScene(action.screen)}
+  return {type: ActionTypes.UI_PERFOM_ACTION, scene: getScene(action.scene)}
 }
 
-function getScene(key) {
-  // TODO error handling
-  return key.split('.').reduce((scene, keyPart) => scene[keyPart], sceneIndex)
-}

@@ -1,7 +1,9 @@
 import '../../css/ui.css';
 import React, {Component, PropTypes} from "react";
+import {connect} from "react-redux";
+import * as UIActions from '../actions/UIActions';
 
-export default class UI extends Component {
+export class UIContainer extends Component {
   static propTypes = {
     text: PropTypes.arrayOf(PropTypes.string).isRequired,
     textCounter: PropTypes.number.isRequired,
@@ -42,3 +44,8 @@ export default class UI extends Component {
     )
   }
 }
+
+export default connect(state => state.ui, {
+  updateUI: UIActions.updateUI,
+  performAction: UIActions.performAction
+})(UIContainer)

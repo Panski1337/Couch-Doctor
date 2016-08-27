@@ -1,9 +1,18 @@
-import {officeScreen} from './office/intro/OfficeIntroScreen';
-import {officeScreen2} from './office/intro2/OfficeIntro2Screen';
+import {officeScene} from './office/intro/OfficeIntroScene';
+import {officeScene2} from './office/intro2/OfficeIntro2Scene';
 
-export const sceneIndex = {
+const sceneIndex = {
   office: {
-    intro: officeScreen,
-    intro2: officeScreen2
+    intro: officeScene,
+    intro2: officeScene2
   }
 };
+
+export default function getScene(key) {
+  try {
+    return key.split('.').reduce((scene, keyPart) => scene[keyPart], sceneIndex)
+  } catch (e) {
+    console.error('scene not found for key: ' + key);
+    return null
+  }
+}

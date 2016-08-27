@@ -1,1 +1,1 @@
-export {default as screen} from './Screen';
+export {default as screen} from './Scene';
