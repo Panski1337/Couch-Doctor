@@ -1,9 +1,9 @@
 import React, {Component, PropTypes} from "react";
 import {connect} from "react-redux";
-import Screen from 'SceneContainer';
+import Screen from './SceneContainer';
 
 class GameContainer extends Component {
-  static render() {
+  render() {
     return (
       <div className="game-container">
         <Screen />

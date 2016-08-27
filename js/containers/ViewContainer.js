@@ -3,7 +3,7 @@ import React, {Component, PropTypes} from "react";
 import {connect} from "react-redux";
 
 
-export default class ViewContainer extends Component {
+export class ViewContainer extends Component {
   static propTypes = {
     backgroundImage: PropTypes.string.isRequired,
     places: PropTypes.arrayOf(PropTypes.object).isRequired
@@ -21,4 +21,4 @@ export default class ViewContainer extends Component {
   }
 }
 
-export default connect(state => state.view, {})(ViewContainer)
+export default connect(state => state.screen.view, {})(ViewContainer)

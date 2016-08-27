@@ -45,7 +45,7 @@ export class UIContainer extends Component {
   }
 }
 
-export default connect(state => state.ui, {
+export default connect(state => state.screen.ui, {
   updateUI: UIActions.updateUI,
   performAction: UIActions.performAction
 })(UIContainer)

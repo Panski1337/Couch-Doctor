@@ -1,7 +1,7 @@
 import '../../css/screen.css';
 import React, {Component, PropTypes} from "react";
 
-export default class ScreenTitle extends Component {
+export default class SceneTitle extends Component {
   static propTypes = {
     title: PropTypes.string.isRequired
   };
