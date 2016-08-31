@@ -37,3 +37,9 @@
     overflow-y: auto;
     z-index: 3;
 }
+
+@media screen and (max-device-width: 568px) and (min-device-height: 418px) {
+    .ui {
+        bottom: 15%;
+    }
+}

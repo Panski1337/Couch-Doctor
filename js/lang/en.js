@@ -42,5 +42,53 @@ export const EN = {
     kitchen: {
       title: "Kitchen"
     }
+  },
+  characters: {
+    stats: {
+      dominance: {
+        name: 'dominance'
+      },
+      hypnosis: {
+        name: 'hypnosis'
+      },
+      charisma: {
+        name: 'charisma'
+      },
+      persuasion: {
+        name: 'persuasion'
+      },
+      reputation: {
+        name: 'reputation'
+      },
+      corruption: {
+        name: 'corruption'
+      },
+      submissive: {
+        name: 'submissive'
+      },
+      selfEsteem: {
+        name: 'self esteem'
+      },
+      affection: {
+        name: 'affection'
+      },
+      inhibition: {
+        name: 'inhibition'
+      }
+    },
+    protagonist: {
+      defaultFirstName: "Thomas",
+      defaultSurname: "Lewis"
+    },
+    women: {
+      wife: {
+        defaultFirstName: "Karen",
+        defaultSurname: "Lewis"
+      },
+      stepDaughter: {
+        defaultFirstName: "Jennifer",
+        defaultSurname: "Taylor"
+      }
+    }
   }
 };

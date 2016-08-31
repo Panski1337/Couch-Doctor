@@ -1,0 +1,17 @@
+.header-toolbar .dataList {
+    float: right;
+}
+
+.dataList {
+    font-size: 12px;
+}
+
+.dataList li{
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.dataList li span{
+    display: block;
+    text-align: center;
+}

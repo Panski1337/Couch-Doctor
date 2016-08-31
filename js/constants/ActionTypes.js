@@ -1,2 +1,8 @@
 export const UI_TEXT_COUNT_UP = 'UI_TEXT_COUNT_UP';
 export const UI_PERFOM_ACTION = 'UI_PERFOM_ACTION';
+export const RAISE_STATS = 'RAISE_STATS';
+export const LOWER_STATS = 'LOWER_STATS';
+export const RAISE_MONEY = 'RAISE_MONEY';
+export const LOWER_MONEY = 'LOWER_MONEY';
+export const WOMAN_RAISE_STATS = 'WOMAN_RAISE_STATS';
+export const WOMAN_LOWER_STATS = 'WOMAN_LOWER_STATS';

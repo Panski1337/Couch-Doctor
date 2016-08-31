@@ -66,3 +66,22 @@
     color: black;
     cursor: pointer;
 }
+
+@media screen and (max-device-width: 568px) and (min-device-height: 418px) {
+    .view {
+        position: relative;
+        height: auto;
+    }
+
+    .view-image {
+        position: relative;
+    }
+}
+
+
+@media screen and (min-device-width: 900px) {
+    .view-image {
+        top: -50%;
+        bottom: auto;
+    }
+}
