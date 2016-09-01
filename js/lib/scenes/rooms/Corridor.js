@@ -9,28 +9,28 @@ import backgroundImage from '../../../../img/rooms/corridor.jpg'
 export const corridor = new Scene({
   view: new View({
     backgroundImage: backgroundImage,
-    title: t("scenes.rooms.corridor.title"),
+    title: t("places.corridor.title"),
     places: [
       new Place({
-        text: t('places.office.title'),
-        scene: 'office.officeIntro1'
+        text: t('places.bedroom.title'),
+        scene: 'rooms.bedroom'
       }),
       new Place({
-        text: t('places.kitchen.title'),
-        scene: 'office.officeIntro1'
+        text: t('places.office.title'),
+        scene: 'rooms.office'
       })
     ]
   }),
   ui: new UI({
-    text: t('scenes.rooms.corridor.text'),
+    text: t('places.corridor.text'),
     actions: [
       new Action({
-        text: t('scenes.rooms.corridor.actions.choice1'),
+        text: t('places.corridor.actions.choice1'),
         scene: 'rooms.corridor',
         dispatches: []
       }),
       new Action({
-        text: t('scenes.rooms.corridor.actions.choice2'),
+        text: t('places.corridor.actions.choice2'),
         scene: 'rooms.corridor',
         dispatches: []
       })

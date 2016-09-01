@@ -7,7 +7,7 @@ export function updateUI(ui) {
 
 export function performAction(action) {
   return dispatch => {
-    action.dispatches.forEach(action => dispatch(action));
+    action.dispatches && action.dispatches.forEach(action => dispatch(action));
     dispatch({type: ActionTypes.UI_PERFOM_ACTION, scene: getScene(action.scene)})
   }
 }

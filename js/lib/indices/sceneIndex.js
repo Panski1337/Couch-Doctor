@@ -1,6 +1,9 @@
 import {officeIntro1} from './../scenes/office/intro/OfficeIntro1Scene';
 import {officeIntro2} from './../scenes/office/intro/OfficeIntro2Scene';
 import {corridor} from "./../scenes/rooms/Corridor";
+import {bedroom} from "../scenes/rooms/Bedroom";
+import {office} from "../scenes/rooms/Office";
+import {wardrobe} from "../scenes/rooms/Wardrobe";
 
 
 const sceneIndex = {
@@ -9,7 +12,10 @@ const sceneIndex = {
     officeIntro2
   },
   rooms: {
-    corridor
+    corridor,
+    bedroom,
+    office,
+    wardrobe
   }
 };
 

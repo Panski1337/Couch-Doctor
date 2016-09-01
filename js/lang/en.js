@@ -24,23 +24,27 @@ export const EN = {
         ]
       }
     },
-    rooms: {
-      corridor: {
-        title: "Corridor",
-        text: ["In the corridor is a big mirror next to the wardrobe. There is also a big shoe cabinet with a lot of shoes in front of it."],
-        actions: {
-          choice1: 'Look in the mirror',
-          choice2: 'Check the wardrobe'
-        }
-      }
-    }
   },
   places: {
+    corridor: {
+      title: "Corridor",
+      text: ["In the corridor is a big mirror next to the wardrobe. There is also a big shoe cabinet with a lot of shoes in front of it."],
+      actions: {
+        choice1: 'Look in the mirror',
+        choice2: 'Check the wardrobe'
+      }
+    },
     office: {
+      text: ["This is my Office. Not much - I know."],
       title: "Office"
     },
-    kitchen: {
-      title: "Kitchen"
+    wardrobe: {
+      text: ["I only have the left outer part of the wardrobe. The rest belongs to my wife."],
+      title: "Wardrobe"
+    },
+    bedroom: {
+      text: ["Back in the days we had a lot of fun here. Now it just a nice place to sleep."],
+      title: "Bedroom"
     }
   },
   characters: {
