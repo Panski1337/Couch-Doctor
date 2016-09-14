@@ -1,21 +1,18 @@
+import t from "../../lang/Translate";
+
 export default class View {
-  title = 'default title';
-  backgroundImage = '';
-  places = [];
+  place = t('default.place');
+  events = [];
 
-
-
-  constructor(options = {}) {
-    this.backgroundImage = options.backgroundImage || this.backgroundImage;
-    this.places = options.places || this.places;
-    this.title = options.title || this.title;
+  constructor(place, events = []) {
+    this.place = place;
+    this.events = events;
   }
 
   asPlainObject() {
     return {
       backgroundImage: this.backgroundImage,
-      places: this.places.map(place => place.asPlainObject()),
-      title: this.title
+      events: this.events
     }
   }
 }

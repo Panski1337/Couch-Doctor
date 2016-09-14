@@ -1,8 +1,9 @@
 import React, {Component, PropTypes} from "react";
 import {connect} from "react-redux";
-import Screen from './SceneContainer';
+import View from './ViewContainer';
 import Toolbar from '../components/Toolbar';
 import DataList from '../components/DataList';
+import UI from './UIContainer';
 
 class GameContainer extends Component {
   static propTypes = {
@@ -15,7 +16,10 @@ class GameContainer extends Component {
         <Toolbar className="header-toolbar">
           <DataList data={this.props.stats}/>
         </Toolbar>
-        <Screen />
+        <div className="full-width screen">
+          <View />
+          <UI />
+        </div>
       </div>
     )
   }

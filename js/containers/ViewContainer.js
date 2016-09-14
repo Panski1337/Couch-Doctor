@@ -9,16 +9,15 @@ import * as UIActions from '../actions/UIActions';
 export class ViewContainer extends Component {
   static propTypes = {
     backgroundImage: PropTypes.string.isRequired,
-    places: PropTypes.arrayOf(PropTypes.object).isRequired,
+    places: PropTypes.arrayOf(PropTypes.string).isRequired,
     title: PropTypes.string.isRequired,
-    performAction: PropTypes.func.isRequired
+    changePlace: PropTypes.func.isRequired
   };
 
   renderPlace(place, index) {
     return <Place key={index}
-                  handleClick={() => this.props.performAction(place)}
-                  text={place.text}
-                  icon={place.icon}/>
+                  handleClick={this.props.changePlace}
+                  name={place}/>
   }
 
   render() {
@@ -37,6 +36,8 @@ export class ViewContainer extends Component {
   }
 }
 
-export default connect(state => state.scene.view, {
-  performAction: UIActions.performAction
+export default connect(state => {
+  return state.view.place
+}, {
+  changePlace: UIActions.changePlace
 })(ViewContainer)

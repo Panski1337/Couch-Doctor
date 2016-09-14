@@ -1,18 +1,21 @@
 import '../../css/view.css';
 import React, {Component, PropTypes} from "react";
+import placeIndex from "../lib/indices/placeIndex";
+
 
 export default class Place extends Component {
   static propTypes = {
-    text:  PropTypes.string.isRequired,
+    name:  PropTypes.string.isRequired,
     handleClick: PropTypes.func.isRequired
   };
 
   render() {
-    const {text, handleClick} = this.props;
+    const {name, handleClick} = this.props;
+    const place = placeIndex(name);
     return (
-      <div className="place" onClick={handleClick}>
+      <div className="place" onClick={() => handleClick(place)}>
         <p>
-          <span>{text}</span>
+          <span>{place.title}</span>
         </p>
       </div>
     )

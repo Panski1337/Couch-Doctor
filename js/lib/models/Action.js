@@ -1,20 +1,20 @@
-import Screen from './Scene'
+import t from "../../lang/Translate";
 
 export default class Action {
   text = '';
-  scene = new Screen();
+  place = t('default.place');
   dispatches = [];
 
-  constructor(options = {}) {
-    this.text = options.text || this.text;
-    this.scene = options.scene || this.scene;
-    this.dispatches = options.dispatches || this.dispatches;
+  constructor(context, name, place, dispatches = []) {
+    this.text = t([context, "actions", name, 'text'].join('.'));
+    this.place = this.place || place;
+    this.dispatches = dispatches;
   }
 
   asPlainObject() {
     return {
       text: this.text,
-      scene: this.scene,
+      place: this.place,
       dispatches: this.dispatches
     }
   }

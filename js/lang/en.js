@@ -1,4 +1,33 @@
+import {HOUSE_FRONT} from "../constants/Places";
+
+const entrance = {
+  title: 'Entrance',
+  text: ['This is the entrance area. You can see a fireplace.']
+};
+
+const kitchen = {
+  title: 'Kitchen',
+  text: ['']
+};
+
+const livingRoom = {
+  title: 'Living Room',
+  text: ['']
+};
+
+const pool = {
+  title: 'Pool',
+  text: ['You can see a barbecue grill next to the pool.']
+};
+
 export const EN = {
+  default: {
+    place: HOUSE_FRONT
+  },
+  general: {
+    skip: 'skip',
+    back: 'back'
+  },
   scenes: {
     office: {
       intro: {
@@ -26,25 +55,63 @@ export const EN = {
     },
   },
   places: {
-    corridor: {
-      title: "Corridor",
-      text: ["In the corridor is a big mirror next to the wardrobe. There is also a big shoe cabinet with a lot of shoes in front of it."],
-      actions: {
-        choice1: 'Look in the mirror',
-        choice2: 'Check the wardrobe'
+    house: {
+      houseFront: {
+        title: 'House Front',
+        text: ['This is my house.', 'second text', 'third text'],
+        actions: {
+          checkMail: {
+            text: 'Check the mail'
+          }
+        }
+      },
+      entrance1: entrance,
+      entrance2: entrance,
+      entrance3: entrance,
+      bathroom1: {
+        title: 'Master Bathroom',
+        text: ['']
+      },
+      bathroom2: {
+        title: 'Stepdaughters Bathroom',
+        text: ['']
+      },
+      kitchen1: kitchen,
+      kitchen2: kitchen,
+      kitchen3: kitchen,
+      livingRoom1: livingRoom,
+      livingRoom2: livingRoom,
+      bedroom1: {
+        title: 'Master Bedroom',
+        text: ['']
+      },
+      bedroom2: {
+        title: 'Stepdaughters Bedroom',
+        text: ['']
+      },
+      diningRoom: {
+        title: 'Dining Room',
+        text: ['']
+      },
+      pool1: pool,
+      pool2: pool,
+      pool3: pool,
+      office: {
+        title: 'Office',
+        text: ['']
+      },
+      washingRoom: {
+        title: 'Washing Room',
+        text: ['']
+      },
+      toilet: {
+        title: 'Guest Toilet',
+        text: ['']
+      },
+      poolhouse: {
+        title: 'Poolhouse',
+        text: ['']
       }
-    },
-    office: {
-      text: ["This is my Office. Not much - I know."],
-      title: "Office"
-    },
-    wardrobe: {
-      text: ["I only have the left outer part of the wardrobe. The rest belongs to my wife."],
-      title: "Wardrobe"
-    },
-    bedroom: {
-      text: ["Back in the days we had a lot of fun here. Now it just a nice place to sleep."],
-      title: "Bedroom"
     }
   },
   characters: {
