@@ -2,6 +2,7 @@ import * as ActionTypes from '../constants/ActionTypes';
 import placeIndex from '../lib/indices/placeIndex';
 import eventIndex from '../lib/indices/eventIndex';
 import {START_PLACE, START_EVENTS} from "../constants/Config";
+import * as LoadMenuAT from "../constants/ActionTypes/Menus/LoadMenuAT";
 
 const defaultView = {
   place: placeIndex(START_PLACE),
@@ -10,6 +11,8 @@ const defaultView = {
 
 export default function(state = defaultView, action) {
   switch (action.type) {
+    case LoadMenuAT.LOAD:
+      return action.save.view;
     case ActionTypes.UI_NAVIGATE_EVENT_TEXT:
       let event = Object.assign({}, state.events[0], {...state.events[0], textCounter: action.textCounter});
       return Object.assign({}, state, {events: [event, ...state.events.slice(1)]});

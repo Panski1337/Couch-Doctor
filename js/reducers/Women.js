@@ -3,6 +3,7 @@ import {stepDaughter} from "../lib/characters/women/StepDaughter";
 import {wife} from "../lib/characters/women/Wife";
 import {combineStats} from "../utils/characterHelper";
 import merge from 'deepmerge';
+import * as LoadMenuAT from "../constants/ActionTypes/Menus/LoadMenuAT";
 
 let defaultState = {
   wife,
@@ -13,6 +14,8 @@ let objToAssign;
 export default function (state = defaultState, action) {
 
   switch (action.type) {
+    case LoadMenuAT.LOAD:
+      return action.save.women;
     case ActionTypes.WOMAN_RAISE_STATS:
       objToAssign = {};
       objToAssign[action.character] = {

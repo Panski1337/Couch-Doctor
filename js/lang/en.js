@@ -161,5 +161,34 @@ export const EN = {
         defaultSurname: "Taylor"
       }
     }
+  },
+  ingameMenu: {
+    open: "Menu",
+    close: "Back To Game",
+    restart: "New Game"
+  },
+  saveMenu: {
+    open: "Save",
+    close: "Close",
+    emptySave: "Empty",
+    save: "Save",
+    removeSave: "Delete"
+  },
+  loadMenu: {
+    open: "Load",
+    close: "Close",
+    load: "Load",
+    emptySave: "Empty"
+  },
+  optionsMenu: {
+    open: "Options",
+    close: "Close",
+    on: "On",
+    off: "Off"
+  },
+  options: {
+    persistOptions: {
+      label: "Persist Options"
+    }
   }
 };

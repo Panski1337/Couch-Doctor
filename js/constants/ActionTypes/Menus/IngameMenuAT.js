@@ -1,0 +1,3 @@
+export const CLOSE_INGAME_MENU = 'CLOSE_INGAME_MENU';
+export const OPEN_INGAME_MENU = 'OPEN_INGAME_MENU';
+export const RESTART = 'RESTART';

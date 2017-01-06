@@ -1,10 +1,8 @@
 import {createStore, applyMiddleware, combineReducers, compose} from 'redux';
 import thunkMiddleware from 'redux-thunk';
-import * as reducers from '../reducers/index';
+import {globalReducer} from '../reducers/globalReducer';
 
-const rootReducer = combineReducers({
-  ...reducers
-});
+const rootReducer = globalReducer;
 
 
 export default function configureStore(initialState) {

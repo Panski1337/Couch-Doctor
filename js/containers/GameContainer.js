@@ -4,6 +4,7 @@ import View from './ViewContainer';
 import Toolbar from '../components/Toolbar';
 import DataList from '../components/DataList';
 import UI from './UIContainer';
+import IngameMenu from './Menus/IngameMenu';
 
 class GameContainer extends Component {
   static propTypes = {
@@ -15,6 +16,7 @@ class GameContainer extends Component {
       <div className="game-container">
         <Toolbar className="header-toolbar">
           <DataList data={this.props.stats}/>
+          <IngameMenu />
         </Toolbar>
         <div className="full-width screen">
           <View />
