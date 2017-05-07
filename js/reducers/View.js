@@ -2,7 +2,7 @@ import * as ActionTypes from '../constants/ActionTypes';
 import placeIndex from '../lib/indices/placeIndex';
 import eventIndex from '../lib/indices/eventIndex';
 import {START_PLACE, START_EVENTS} from "../constants/Config";
-import * as LoadMenuAT from "../constants/ActionTypes/Menus/LoadMenuAT";
+import * as LoadMenuAT from "../constants/ActionTypes/ui/menus/LoadMenuAT";
 
 const defaultView = {
   place: placeIndex(START_PLACE),

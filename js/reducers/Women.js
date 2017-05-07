@@ -3,7 +3,7 @@ import {stepDaughter} from "../lib/characters/women/StepDaughter";
 import {wife} from "../lib/characters/women/Wife";
 import {combineStats} from "../utils/characterHelper";
 import merge from 'deepmerge';
-import * as LoadMenuAT from "../constants/ActionTypes/Menus/LoadMenuAT";
+import * as LoadMenuAT from "../constants/ActionTypes/ui/menus/LoadMenuAT";
 
 let defaultState = {
   wife,

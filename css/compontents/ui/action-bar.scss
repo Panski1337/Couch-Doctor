@@ -1,0 +1,91 @@
+.action-bar {
+  &--open {
+    .action-bar__wrapper {
+      display: block;
+    }
+
+    .action-bar__overlay {
+      display: block;
+      z-index: 9;
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(192,192,192,0.5);
+    }
+  }
+
+  &__opener, &__closer {
+    display: none;
+    @media screen and (max-width: 767px) {
+      display: block;
+    }
+
+    &__symbol, &__text {
+      color: #fbeed5;
+      display: block;
+    }
+  }
+
+  &__opener {
+    @media screen and (max-width: 767px) {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  &__closer {
+    @media screen and (max-width: 767px) {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  &__overlay {
+    display: none;
+  }
+
+  &__wrapper {
+    padding: 5px 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+    @media screen and (max-width: 767px) {
+      left: 0;
+      z-index: 10;
+      background-color: #222222;
+      display: none;
+    }
+  }
+
+  &__action {
+    border: solid 1px #fff;
+    padding: 5px;
+    margin: 0.5%;
+    width: 49%;
+    float: left;
+    font-size: 20px;
+
+    @media screen and (max-width: 1024px) {
+      margin: 1%;
+      width: 48%;
+    }
+
+    @media screen and (max-width: 767px) {
+      width: auto;
+      float: none;
+    }
+
+    &:hover {
+      background-color: #fbeed5;
+      color: #333333;
+      cursor: pointer;
+    }
+  }
+
+
+}

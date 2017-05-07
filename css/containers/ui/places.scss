@@ -1,0 +1,24 @@
+.places {
+  position: fixed;
+  bottom: 35%;
+  left: 0;
+  z-index: 2;
+}
+
+.places .place {
+  min-width: 150px;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.places .place p {
+  background-color: black;
+  color: #fbeed5;
+  padding: 3px
+}
+
+.places .place p:hover {
+  background-color: #fbeed5;
+  color: black;
+  cursor: pointer;
+}

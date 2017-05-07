@@ -1,4 +1,4 @@
-import '../../css/view.css';
+import '../../css/containers/ui/places.scss';
 import React, {Component, PropTypes} from "react";
 import placeIndex from "../lib/indices/placeIndex";
 

@@ -1,7 +1,7 @@
 import * as ActionTypes from '../constants/ActionTypes';
 import {protagonist} from "../lib/characters/protagonist/Man";
 import {combineStats} from "../utils/characterHelper";
-import * as LoadMenuAT from "../constants/ActionTypes/Menus/LoadMenuAT";
+import * as LoadMenuAT from "../constants/ActionTypes/ui/menus/LoadMenuAT";
 
 export default function (state = protagonist, action) {
   switch (action.type) {

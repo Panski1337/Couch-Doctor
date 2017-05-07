@@ -1,22 +1,23 @@
-import '../../css/dataList.css';
+import '../../css/compontents/data-list.scss';
 import React, {Component, PropTypes} from "react";
 import {capitalize} from '../utils/stringHelper'
 
-export default class Toolbar extends Component {
+export default class DataList extends Component {
   static propTypes = {
     data: PropTypes.object.isRequired
   };
 
   renderItem(index, entry) {
-    return <li key={index} >{capitalize(entry.name)}
-      <span>{entry.value}</span>
+    return <li key={index} className="data-list__item">
+      <span className="data-list__item__label">{capitalize(entry.name)}</span>
+      <span className="data-list__item__value">{entry.value}</span>
     </li>
   }
 
   render() {
     const {data} = this.props;
     return (
-      <ul className="dataList">
+      <ul className={'data-list'}>
         {Object.keys(data).map((key, index) => this.renderItem(index, data[key]))}
       </ul>
     )

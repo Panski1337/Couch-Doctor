@@ -1,3 +1,3 @@
-export default function getEvents(ignore) {
-  return [];
+export default function eventIndex() {
+  return []
 }

@@ -7,15 +7,17 @@ export default class Place {
   backgroundImage = '';
   places = [];
   actions = [];
+  events = [];
 
-  constructor(context, imageUrl, places = [], actions = []) {
+  constructor(context, imageUrl, places = [], actions = [], events = []) {
     this.title = t([context, 'title'].join('.'));
-    this.text = t([context, 'text'].join('.'));
+    const text = t([context, 'text'].join('.'));
+    this.text = Array.isArray(text) ? text : [text];
     this.textCounter = this.text.length;
     this.backgroundImage = imageUrl;
     this.actions = actions;
     this.places = places;
-
+    this.events = events;
   }
 
   asPlainObject() {
@@ -25,7 +27,8 @@ export default class Place {
       textCounter: this.textCounter,
       backgroundImage: this.backgroundImage,
       places: this.places,
-      actions: this.actions
+      actions: this.actions,
+      events: this.events
     }
   }
 }

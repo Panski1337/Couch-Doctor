@@ -20,6 +20,22 @@ const pool = {
   text: ['You can see a barbecue grill next to the pool.']
 };
 
+const events = {
+  houseFront: {
+    neighbourGreetings: {
+      text: ["Your hot neighbour is greeting you!"],
+      actions: {
+        sexist: {
+          text: 'Hey! Looking really hot, babe!'
+        },
+        normal: {
+          text: 'Hey! How are you doing?'
+        }
+      }
+    }
+  }
+};
+
 export const EN = {
   default: {
     place: HOUSE_FRONT
@@ -28,6 +44,7 @@ export const EN = {
     skip: 'skip',
     back: 'back'
   },
+  events,
   scenes: {
     office: {
       intro: {
@@ -190,5 +207,9 @@ export const EN = {
     persistOptions: {
       label: "Persist Options"
     }
+  },
+  actionBar: {
+    open: "Show Actions",
+    close: "Hide Actions"
   }
 };

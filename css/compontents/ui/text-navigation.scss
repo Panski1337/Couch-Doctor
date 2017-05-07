@@ -1,0 +1,19 @@
+.text-navigation {
+  font-size: 12px;
+  text-align: right;
+  color: #fbeed5;
+
+  &__skip, &__back {
+    cursor: pointer;
+    margin-right: 20px;
+
+    &:hover {
+      color: burlywood;
+    }
+
+    &.disabled {
+      color: #646667;
+      cursor: auto;
+    }
+  }
+}

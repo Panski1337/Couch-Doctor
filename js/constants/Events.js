@@ -1,0 +1,1 @@
+export const NEIGHBOUR_GREETINGS = 'events.houseFront.neighbourGreetings';

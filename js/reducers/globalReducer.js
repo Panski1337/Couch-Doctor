@@ -1,6 +1,6 @@
 import * as reducers from './index';
 import {combineReducers} from "redux";
-import * as IngameMenuAT from "../constants/ActionTypes/Menus/IngameMenuAT";
+import * as IngameMenuAT from "../constants/ActionTypes/ui/menus/IngameMenuAT";
 
 const appReducer = combineReducers({
   ...reducers

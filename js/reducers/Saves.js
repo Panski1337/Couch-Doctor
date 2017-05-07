@@ -1,4 +1,4 @@
-import * as SaveMenuAT from '../constants/ActionTypes/Menus/SaveMenuAT';
+import * as SaveMenuAT from '../constants/ActionTypes/ui/menus/SaveMenuAT';
 
 const defaultSaves = [null, null, null, null, null, null, null, null, null, null];
 

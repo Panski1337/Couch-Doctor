@@ -1,71 +1,45 @@
-import '../../css/ui.css';
+import '../../css/containers/ui.scss'
 import React, {Component, PropTypes} from "react";
-import {connect} from "react-redux";
-import * as UIActions from '../actions/UIActions';
-import t from "../lang/Translate";
+import TextNavigation from '../components/ui/TextNavigation';
+import ActionBar from '../components/ui/ActionBar';
+import DialogText from '../components/ui/DialogText';
 
-export class UIContainer extends Component {
-  static propTypes = {
-    text: PropTypes.arrayOf(PropTypes.string).isRequired,
-    textCounter: PropTypes.number.isRequired,
-    actions: PropTypes.arrayOf(PropTypes.object).isRequired,
-    events: PropTypes.arrayOf(PropTypes.shape({
-      text: PropTypes.arrayOf(PropTypes.string).isRequired,
-      textCounter: PropTypes.number.isRequired,
-      actions: PropTypes.arrayOf(PropTypes.shape({
-        text: PropTypes.string,
-        dispatches: PropTypes.arrayOf(PropTypes.object),
-        place: PropTypes.string
-      })).isRequired
-    })),
-    navigateText: PropTypes.func.isRequired,
-    performAction: PropTypes.func.isRequired
-  };
-
-  renderAction(action, index) {
-    return <div key={index} className="action" onClick={() => this.props.performAction(action)}>{action.text}</div>
-  }
+export default class UIContainer extends Component {
 
   render() {
-    const events = this.props.events;
-    const isEvent = events && events.length > 0;
-    const {text, actions, textCounter} = isEvent ? this.props.events[0] : this.props;
-    const hasNext = textCounter - 1 > 0;
-    const hasBefore = text.length >= textCounter + 1;
+    const {scene, performAction, navigateText, hasNext, hasBefore, hasActions} =  this.props;
+    const {text, actions, textCounter} = scene;
 
     return (
-      <div className="full-width ui">
-        <div className="text-navigation">
-          <span onClick={() => hasNext && this.props.navigateText(1, isEvent)}
-                className={["noselect", "skip", !hasNext ? 'disabled' : ''].join(' ')}>
-            {t('general.skip')}
-          </span>
-          <span onClick={() => hasBefore && this.props.navigateText(textCounter + 1, isEvent)}
-                className={["noselect", "back", !hasBefore ? 'disabled' : ''].join(' ')}>
-            {t('general.back')}
-          </span>
-        </div>
-        <div className={["text", "noselect", hasNext ? 'has-next' : ''].join(' ')}>
-          <span onClick={() => hasNext && this.props.navigateText(textCounter - 1, isEvent)}>
-            {text[text.length - textCounter]}
-          </span>
-        </div>
-        {actions && actions.length > 0 && !hasNext && <div className="actions noselect">
-          {actions.map(this.renderAction.bind(this))}
-        </div>}
+      <div className="ui">
+        <TextNavigation isSkipClickEnabled={hasNext}
+                        isBackClickEnabled={hasBefore}
+                        handleSkipClick={() => hasNext && navigateText(1)}
+                        handleBackClick={() => hasBefore && navigateText(textCounter + 1)}/>
+
+        <DialogText handleClick={() => hasNext && navigateText(textCounter - 1)}
+                    text={text[text.length - textCounter]}
+                    isClickable={hasNext}/>
+
+        {hasActions && <ActionBar actions={actions} handleClick={performAction}/>}
       </div>
     )
   }
 }
 
-export default connect(state => {
-  return {
-    text: state.view.place.text,
-    textCounter: state.view.place.textCounter,
-    actions: state.view.place.actions,
-    events: state.view.events
-  }
-}, {
-  navigateText: UIActions.navigateText,
-  performAction: UIActions.performAction
-})(UIContainer)
+UIContainer.propTypes = {
+  hasNext: PropTypes.bool.isRequired,
+  hasBefore: PropTypes.bool.isRequired,
+  hasActions: PropTypes.bool.isRequired,
+  scene: PropTypes.shape({
+    text: PropTypes.arrayOf(PropTypes.string).isRequired,
+    textCounter: PropTypes.number.isRequired,
+    actions: PropTypes.arrayOf(PropTypes.shape({
+      text: PropTypes.string,
+      dispatches: PropTypes.arrayOf(PropTypes.object),
+      place: PropTypes.string
+    })).isRequired
+  }).isRequired,
+  navigateText: PropTypes.func.isRequired,
+  performAction: PropTypes.func.isRequired
+};

@@ -1,13 +1,14 @@
 import t from "../../lang/Translate";
 
 export default class Event {
-  trigger = () => false;
+  trigger = {};
   text = [];
   actions = [];
   textCounter = 0;
 
-  constructor(context, name, actions = [], trigger = () => false) {
-    this.text = t(["events", context, name, "text"].join('.'));
+  constructor(context, name, actions = [], trigger) {
+    const text = t(["events", context, name, "text"].join('.'));
+    this.text = Array.isArray(text) ? text : [text];
     this.actions = actions;
     this.textCounter = this.text.length;
     this.trigger = trigger;

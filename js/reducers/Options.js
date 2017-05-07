@@ -1,4 +1,4 @@
-import * as OptionsMenuAT from '../constants/ActionTypes/Menus/OptionsMenuAT';
+import * as OptionsMenuAT from '../constants/ActionTypes/ui/menus/OptionsMenuAT';
 import t from "../lang/Translate";
 import * as Constants from "../constants/Constants";
 

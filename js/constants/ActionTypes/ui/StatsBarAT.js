@@ -1,0 +1,2 @@
+export const CLOSE_STATS_BAR = 'CLOSE_STATS_BAR';
+export const OPEN_STATS_BAR = 'OPEN_STATS_BAR';
